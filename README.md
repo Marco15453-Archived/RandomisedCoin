@@ -35,7 +35,7 @@ randomised_coin:
   - TeleportTo914
   # Good Effects Hint when this Effect Occur
   good_effects_hint:
-	None: Nothing happend interesting
+    None: Nothing happend interesting
     FasterSpeed: OwO, The Coin gave you one SCP-207, gonna go fast!
     RandomItem: The Coin gave you an random item, lucky day
     Heal: The Coin healed you completly, gonna go fast!
@@ -52,7 +52,7 @@ randomised_coin:
   - KillPlayer
   # Bad Effects Hint when this Effect Occur
   bad_effects_hint:
-	None: Nothing happend interesting
+    None: Nothing happend interesting
     DamagePlayer: The Coin didn't loved you! It took 20 Health from your Skin!
     KillPlayer: The Coin decided to kill you! What a shame
     RandomEffect: The Coin didn't loved you! It gave you a random bad effect!
