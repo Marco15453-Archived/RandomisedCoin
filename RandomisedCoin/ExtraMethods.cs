@@ -20,6 +20,8 @@ namespace RandomisedCoin
 
             switch(effect)
             {
+                case GoodEffectType.None:
+                    break;
                 case GoodEffectType.RandomItem:
                     ply.AddItem(config.RandomItems.ElementAt(rnd.Next(config.RandomItems.Count)));
                     break;
@@ -50,6 +52,8 @@ namespace RandomisedCoin
 
             switch(effect)
             {
+                case BadEffectType.None:
+                    break;
                 case BadEffectType.DamagePlayer:
                     ply.Hurt(config.PlayerDamage);
                     break;

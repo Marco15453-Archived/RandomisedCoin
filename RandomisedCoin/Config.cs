@@ -26,6 +26,7 @@ namespace RandomisedCoin
         [Description("Good Effects Hint when this Effect Occur")]
         public Dictionary<GoodEffectType, string> GoodEffectsHint { get; set; } = new Dictionary<GoodEffectType, string>
         {
+            { GoodEffectType.None, "Nothing happend interesting"},
             { GoodEffectType.FasterSpeed, "OwO, The Coin gave you one SCP-207, gonna go fast!"},
             { GoodEffectType.RandomItem, "The Coin gave you an random item, lucky day" },
             { GoodEffectType.Heal, "The Coin healed you completly, gonna go fast!" },
@@ -49,6 +50,7 @@ namespace RandomisedCoin
         [Description("Bad Effects Hint when this Effect Occur")]
         public Dictionary<BadEffectType, string> BadEffectsHint { get; set; } = new Dictionary<BadEffectType, string>
         {
+            { BadEffectType.None, "Nothing happend interesting"},
             { BadEffectType.DamagePlayer, "The Coin didn't loved you! It took 20 Health from your Skin!"},
             { BadEffectType.KillPlayer, "The Coin decided to kill you! What a shame"},
             { BadEffectType.RandomEffect, "The Coin didn't loved you! It gave you a random bad effect!" },

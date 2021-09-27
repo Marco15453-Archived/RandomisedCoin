@@ -12,7 +12,7 @@ namespace RandomisedCoin
 
         public override string Name => "Randomised Coin";
         public override string Author => "Marco15453";
-        public override Version Version => new Version(1, 1, 0);
+        public override Version Version => new Version(1, 0, 0);
         public override Version RequiredExiledVersion => new Version(3, 0, 0);
 
         private PlayerHandler playerHandler;
