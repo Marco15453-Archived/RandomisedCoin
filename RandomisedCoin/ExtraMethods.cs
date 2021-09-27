@@ -20,7 +20,7 @@ namespace RandomisedCoin
 
             switch(effect)
             {
-                case GoodEffectType.GiveItem:
+                case GoodEffectType.RandomItem:
                     ply.AddItem(config.RandomItems.ElementAt(rnd.Next(config.RandomItems.Count)));
                     break;
                 case GoodEffectType.Heal:
@@ -28,6 +28,9 @@ namespace RandomisedCoin
                     break;
                 case GoodEffectType.TeleportTo914:
                     ply.Position = Map.Rooms.First(r => r.Type == RoomType.Lcz914).transform.position + UnityEngine.Vector3.up * 1.5f;
+                    break;
+                case GoodEffectType.RandomRoom:
+                    ply.Position = Map.Rooms.First(r => r.Type == config.RandomRooms.ElementAt(rnd.Next(config.RandomRooms.Count))).transform.position + UnityEngine.Vector3.up * 1.5f;
                     break;
                 case GoodEffectType.FasterSpeed:
                     ply.EnableEffect(EffectType.Scp207, config.RandomEffectsDuration, true);

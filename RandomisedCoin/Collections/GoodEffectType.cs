@@ -3,9 +3,10 @@
     public enum GoodEffectType
     {
         None,
-        GiveItem,
+        RandomItem,
         Heal,
         TeleportTo914,
-        FasterSpeed
+        FasterSpeed,
+        RandomRoom
     }
 }

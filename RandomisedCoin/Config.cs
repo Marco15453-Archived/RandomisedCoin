@@ -18,7 +18,7 @@ namespace RandomisedCoin
         public HashSet<GoodEffectType> GoodEffects { get; set; } = new HashSet<GoodEffectType>
         {
             GoodEffectType.FasterSpeed,
-            GoodEffectType.GiveItem,
+            GoodEffectType.RandomItem,
             GoodEffectType.Heal,
             GoodEffectType.TeleportTo914
         };
@@ -27,7 +27,7 @@ namespace RandomisedCoin
         public Dictionary<GoodEffectType, string> GoodEffectsHint { get; set; } = new Dictionary<GoodEffectType, string>
         {
             { GoodEffectType.FasterSpeed, "OwO, The Coin gave you one SCP-207, gonna go fast!"},
-            { GoodEffectType.GiveItem, "The Coin gave you an random item, lucky day" },
+            { GoodEffectType.RandomItem, "The Coin gave you an random item, lucky day" },
             { GoodEffectType.Heal, "The Coin healed you completly, gonna go fast!" },
             { GoodEffectType.TeleportTo914, "OwO, look at this! You got teleported to SCP-914" }
         };
@@ -57,9 +57,13 @@ namespace RandomisedCoin
             { BadEffectType.TPtoSCP, "You don't have much luck today, the coin teleported you to an SCP!" }
         };
 
-        [Description("Effect Settings")]
+        [Description("Damage amount when it triggers DamagePlayer on bad_effects")]
         public int PlayerDamage { get; set; } = 20;
 
+        [Description("Random Effects Duration when it triggers RandomEffects on random_effects")]
+        public int RandomEffectsDuration { get; set; } = 5;
+
+        [Description("Random Items when it triggers RandomItems on good_effects")]
         public HashSet<ItemType> RandomItems { get; set; } = new HashSet<ItemType>
         {
             ItemType.Adrenaline,
@@ -69,6 +73,7 @@ namespace RandomisedCoin
             ItemType.SCP207
         };
 
+        [Description("Random Effects when it triggers RandomEffects on bad_effects?")]
         public HashSet<EffectType> RandomEffects { get; set; } = new HashSet<EffectType>
         {
             EffectType.Amnesia,
@@ -86,8 +91,7 @@ namespace RandomisedCoin
             EffectType.SinkHole
         };
 
-        public int RandomEffectsDuration { get; set; } = 5;
-
+        [Description("Random Rooms when it triggers RandomRoom on bad_effects and/or good_effects")]
         public HashSet<RoomType> RandomRooms { get; set; } = new HashSet<RoomType>
         {
             RoomType.EzCafeteria,
