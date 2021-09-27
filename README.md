@@ -10,15 +10,15 @@ Name | Type | Description | Default
 is_enabled | bool | Should the plugin be enabled? | true
 good_side | string | What Side should trigger the Good Effects? (tails or heads) | tails
 good_effects | HashSet | Good Effects when landed on the setting above | FasterSpeed, RandomItem, Heal, TeleportTo914
-good_effects_hint | Dictionary | Good Effects Hint when this Effect Occur | [Click Here]()
+good_effects_hint | Dictionary | Good Effects Hint when this Effect Occur | [Click Here](https://github.com/Marco15453/RandomisedCoin#default-config)
 bad_side | string | What Side should trigger the Bad Effects? (tails or heads) | heads
 bad_effects | HashSet | Bad Effects when landed on the setting above | DamagePlayer, RandomEffect, RandomRoom, SpawnActiveGrenade, TPtoSCP, KillPlayer
-bad_effects_hint | Dictionary | Bad Effects Hint when this Effect Occur | [Click Here]()
+bad_effects_hint | Dictionary | Bad Effects Hint when this Effect Occur | [Click Here](https://github.com/Marco15453/RandomisedCoin#default-config)
 player_damage | int | Damage amount when it triggers DamagePlayer on bad_effects | 20
 random_effects_duration | int | Random Effects Duration when it triggers RandomEffects on random_effects | 5
-random_items | HashSet | Random Items when it triggers RandomItems on good_effects | [Click Here]()
-random_effects | HashSet | Random Effects when it triggers RandomEffects on bad_effects? | [Click Here]()
-random_rooms | HashSet | Random Rooms when it triggers RandomRoom on bad_effects and/or good_effects | [Click Here]()
+random_items | HashSet | Random Items when it triggers RandomItems on good_effects | [Click Here](https://github.com/Marco15453/RandomisedCoin#default-config)
+random_effects | HashSet | Random Effects when it triggers RandomEffects on bad_effects? | [Click Here](https://github.com/Marco15453/RandomisedCoin#default-config)
+random_rooms | HashSet | Random Rooms when it triggers RandomRoom on bad_effects and/or good_effects | [Click Here](https://github.com/Marco15453/RandomisedCoin#default-config)
 
 # Default Config
 ```yml
