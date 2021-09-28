@@ -19,6 +19,7 @@ KillPlayer | Kills the player
 
 # Random Items
 [Click Here](https://discord.com/channels/656673194693885975/668962626780397569/668962667851022341) to see all available ItemTypes.
+
 **You need to be in the Discord [EXILED](https://discord.gg/4TgmJ5UzEB)**
 
 # Random Effects
