@@ -2,7 +2,7 @@
 A simple Exiled Plugin that gives some effects upon Landing on a side
 
 # Types
-If you want to know what Effects are currently supported [Click Here]()
+If you want to know what Effects are currently supported [Click Here](https://github.com/Marco15453/RandomisedCoin/blob/master/TYPES.md)
 
 # Config
 Name | Type | Description | Default
