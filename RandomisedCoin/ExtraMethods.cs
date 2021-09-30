@@ -16,7 +16,7 @@ namespace RandomisedCoin
             GoodEffectType effect = config.GoodEffects.ElementAt(rnd.Next(config.GoodEffects.Count));
 
             if (config.GoodEffectsHint.ContainsKey(effect))
-                ply.ShowHint(config.GoodEffectsHint[effect], 5);
+                ply.ShowHint(config.GoodEffectsHint[effect]);
 
             switch(effect)
             {

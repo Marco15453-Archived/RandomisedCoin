@@ -11,6 +11,12 @@ namespace RandomisedCoin
         [Description("Should the plugin be enabled?")]
         public bool IsEnabled { get; set; } = true;
 
+        [Description("Cooldown between each flipping to prevent spamming? (-1 = Disabled)")]
+        public int FlippingCooldown { get; set; } = 30;
+
+        [Description("Message when flipping is still on Cooldown")]
+        public string FlippingCooldownMessage { get; set; } = "<color=red>Flipping a coin is still on cooldown! Please wait %REMAINING% Seconds";
+
         [Description("What Side should trigger the Good Effects? (tails or heads)")]
         public string GoodSide { get; set; } = "tails";
 
