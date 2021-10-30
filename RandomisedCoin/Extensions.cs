@@ -21,7 +21,10 @@ namespace RandomisedCoin
             CoinEffectType effect = good ? plugin.Config.GoodEffects.ElementAt(rnd.Next(count)) : plugin.Config.BadEffects.ElementAt(rnd.Next(count));
 
             if (Player.Get(Team.SCP).Count() <= 0 && effect == CoinEffectType.TPtoSCP)
+            {
                 ApplyEffect(ply, good);
+                return;
+            }
 
             if (plugin.Config.EffectHints.ContainsKey(effect) && plugin.Config.EffectHints.Count > 0)
                 ply.ShowHint(plugin.Config.EffectHints[effect].Replace("%DURATION%", plugin.Config.RandomEffectsDuration.ToString()).Replace("%DAMAGE%", plugin.Config.PlayerDamage.ToString()));
