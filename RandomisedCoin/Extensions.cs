@@ -18,14 +18,13 @@ namespace RandomisedCoin
         {
             int count = good ? plugin.Config.GoodEffects.Count : plugin.Config.BadEffects.Count;
 
-            CoinEffectType effect = good ? plugin.Config.GoodEffects.ElementAt(count) : plugin.Config.BadEffects.ElementAt(count);
+            CoinEffectType effect = good ? plugin.Config.GoodEffects.ElementAt(rnd.Next(count)) : plugin.Config.BadEffects.ElementAt(rnd.Next(count));
 
             if (Player.Get(Team.SCP).Count() <= 0 && effect == CoinEffectType.TPtoSCP)
                 ApplyEffect(ply, good);
 
-            foreach (var index in plugin.Config.EffectHints)
-                if (index.Key == effect) 
-                    ply.ShowHint(index.Value.Replace("%DURATION%", plugin.Config.RandomEffectsDuration.ToString()).Replace("%DAMAGE%", plugin.Config.PlayerDamage.ToString()));
+            if (plugin.Config.EffectHints.ContainsKey(effect) && plugin.Config.EffectHints.Count > 0)
+                ply.ShowHint(plugin.Config.EffectHints[effect].Replace("%DURATION%", plugin.Config.RandomEffectsDuration.ToString()).Replace("%DAMAGE%", plugin.Config.PlayerDamage.ToString()));
 
             switch (effect)
             {
@@ -62,8 +61,6 @@ namespace RandomisedCoin
                 case CoinEffectType.TPtoSCP:
                     Player scpPlayer = Player.Get(Team.SCP).Where(p => p.Role != RoleType.Scp079).ElementAt(rnd.Next(0, Player.Get(Team.SCP).Count()));
                     ply.Position = scpPlayer.Position;
-                    break;
-                default:
                     break;
             }
         }
