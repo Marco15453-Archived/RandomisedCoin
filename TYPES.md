@@ -1,21 +1,18 @@
-# Good Effect Types
+# Coin Effect Types
+**This can be used in both options good_effects and bad_effects**
 Name | Description
 ---- | -----------
+None | Nothing
 FasterSpeed | Gives the player the effect of SCP-207 for the duration specified at random_effects_duration
 RandomItem | Gives the player a random item that are in random_items
 RandomRoom | Teleports the player to a random room that are in random_rooms
 Heal | Heals the player completely
 TeleportTo914 | Teleports the player to SCP-914
-
-# Bad Effect Types
-Name | Description
----- | -----------
 DamagePlayer | Damages the player for the amount specified at player_damage
 RandomEffect | Gives the player a random effect that are in random_effects
-RandomRoom | Teleports the player to a random room that are in random_rooms
 SpawnActiveGrenade | Throws an Grenade from the player
 TPtoSCP | Teleports the player to an SCP if a scp is still alive
-KillPlayer | Kills the player
+KillPlayer | Kills the playe
 
 # Random Items
 [Click Here](https://discord.com/channels/656673194693885975/668962626780397569/668962667851022341) to see all available ItemTypes.

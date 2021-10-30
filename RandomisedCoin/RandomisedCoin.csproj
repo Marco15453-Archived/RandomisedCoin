@@ -46,6 +46,9 @@
     <Reference Include="Exiled.Events">
       <HintPath>..\..\..\EXILED Server Files 3.0\EXILED\Plugins\Exiled.Events.dll</HintPath>
     </Reference>
+    <Reference Include="Exiled.Loader">
+      <HintPath>..\..\..\EXILED Server Files 3.0\EXILED\Exiled.Loader.dll</HintPath>
+    </Reference>
     <Reference Include="Mirror">
       <HintPath>..\..\..\References\Mirror.dll</HintPath>
     </Reference>
@@ -62,11 +65,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Collections\BadEffectType.cs" />
-    <Compile Include="Collections\GoodEffectType.cs" />
+    <Compile Include="Collections\CoinEffectType.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Events\PlayerHandler.cs" />
-    <Compile Include="ExtraMethods.cs" />
+    <Compile Include="Events\ServerHandler.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="RandomisedCoin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

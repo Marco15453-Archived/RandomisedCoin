@@ -11,6 +11,9 @@ namespace RandomisedCoin
         [Description("Should the plugin be enabled?")]
         public bool IsEnabled { get; set; } = true;
 
+        [Description("Should the player be available to flip a coin when round is not started?")]
+        public bool FlippingRound { get; set; } = false;
+
         [Description("Cooldown between each flipping to prevent spamming? (-1 = Disabled)")]
         public int FlippingCooldown { get; set; } = 30;
 
@@ -21,57 +24,51 @@ namespace RandomisedCoin
         public string GoodSide { get; set; } = "tails";
 
         [Description("Good Effects when landed on the setting above")]
-        public HashSet<GoodEffectType> GoodEffects { get; set; } = new HashSet<GoodEffectType>
+        public HashSet<CoinEffectType> GoodEffects { get; set; } = new HashSet<CoinEffectType>
         {
-            GoodEffectType.FasterSpeed,
-            GoodEffectType.RandomItem,
-            GoodEffectType.Heal,
-            GoodEffectType.TeleportTo914
-        };
-
-        [Description("Good Effects Hint when this Effect Occur")]
-        public Dictionary<GoodEffectType, string> GoodEffectsHint { get; set; } = new Dictionary<GoodEffectType, string>
-        {
-            { GoodEffectType.None, "Nothing happend interesting"},
-            { GoodEffectType.FasterSpeed, "OwO, The Coin gave you one SCP-207, gonna go fast!"},
-            { GoodEffectType.RandomItem, "The Coin gave you an random item, lucky day" },
-            { GoodEffectType.Heal, "The Coin healed you completly, gonna go fast!" },
-            { GoodEffectType.TeleportTo914, "OwO, look at this! You got teleported to SCP-914" }
+            CoinEffectType.FasterSpeed,
+            CoinEffectType.RandomItem,
+            CoinEffectType.Heal,
+            CoinEffectType.TeleportTo914
         };
 
         [Description("What Side should trigger the Bad Effects? (tails or heads)")]
         public string BadSide { get; set; } = "heads";
 
         [Description("Bad Effects when landed on the setting above")]
-        public HashSet<BadEffectType> BadEffects { get; set; } = new HashSet<BadEffectType>
+        public HashSet<CoinEffectType> BadEffects { get; set; } = new HashSet<CoinEffectType>
         {
-            BadEffectType.DamagePlayer,
-            BadEffectType.RandomEffect,
-            BadEffectType.RandomRoom,
-            BadEffectType.SpawnActiveGrenade,
-            BadEffectType.TPtoSCP,
-            BadEffectType.KillPlayer
+            CoinEffectType.DamagePlayer,
+            CoinEffectType.RandomEffect,
+            CoinEffectType.RandomRoom,
+            CoinEffectType.SpawnActiveGrenade,
+            CoinEffectType.TPtoSCP,
+            CoinEffectType.KillPlayer
         };
 
-        [Description("Bad Effects Hint when this Effect Occur")]
-        public Dictionary<BadEffectType, string> BadEffectsHint { get; set; } = new Dictionary<BadEffectType, string>
-        {
-            { BadEffectType.None, "Nothing happend interesting"},
-            { BadEffectType.DamagePlayer, "The Coin didn't loved you! It took 20 Health from your Skin!"},
-            { BadEffectType.KillPlayer, "The Coin decided to kill you! What a shame"},
-            { BadEffectType.RandomEffect, "The Coin didn't loved you! It gave you a random bad effect!" },
-            { BadEffectType.RandomRoom, "The Coin decided to teleported you in a random room!"},
-            { BadEffectType.SpawnActiveGrenade, "You should run for your live!" },
-            { BadEffectType.TPtoSCP, "You don't have much luck today, the coin teleported you to an SCP!" }
-        };
-
-        [Description("Damage amount when it triggers DamagePlayer on bad_effects")]
+        [Description("Damage amount when it triggers DamagePlayer")]
         public int PlayerDamage { get; set; } = 20;
 
-        [Description("Random Effects Duration when it triggers RandomEffects on random_effects")]
+        [Description("Random Effects Duration when it triggers RandomEffects")]
         public int RandomEffectsDuration { get; set; } = 5;
 
-        [Description("Random Items when it triggers RandomItems on good_effects")]
+        [Description("Hint that should be displayed when the effect occurs")]
+        public Dictionary<CoinEffectType, string> EffectHints { get; set; } = new Dictionary<CoinEffectType, string>
+        {
+            { CoinEffectType.None, "Nothing see to happen!"},
+            { CoinEffectType.TeleportTo914, "You've been teleported to 914!" },
+            { CoinEffectType.KillPlayer, "You've been terminated by Coin!" },
+            { CoinEffectType.RandomRoom, "You've been teleported to a random Room!" },
+            { CoinEffectType.RandomItem, "You've been given an random item!" },
+            { CoinEffectType.RandomEffect, "You've been given an random effect!" },
+            { CoinEffectType.FasterSpeed, "You've been given SCP-207 for %DURATION% Seconds!" },
+            { CoinEffectType.Heal, "You've been healed completely!" },
+            { CoinEffectType.TPtoSCP, "You had some bad timing, You've been teleported to an SCP!" },
+            { CoinEffectType.SpawnActiveGrenade, "Run for your life, there is something among you!" },
+            { CoinEffectType.DamagePlayer, "You step your toe on a wall, you took %DAMAGE% Health" }
+        };
+
+        [Description("Random Items when it triggers RandomItems?")]
         public HashSet<ItemType> RandomItems { get; set; } = new HashSet<ItemType>
         {
             ItemType.Adrenaline,
@@ -81,7 +78,7 @@ namespace RandomisedCoin
             ItemType.SCP207
         };
 
-        [Description("Random Effects when it triggers RandomEffects on bad_effects?")]
+        [Description("Random Effects when it triggers RandomEffects?")]
         public HashSet<EffectType> RandomEffects { get; set; } = new HashSet<EffectType>
         {
             EffectType.Amnesia,
@@ -99,7 +96,7 @@ namespace RandomisedCoin
             EffectType.SinkHole
         };
 
-        [Description("Random Rooms when it triggers RandomRoom on bad_effects and/or good_effects")]
+        [Description("Random Rooms when it triggers RandomRoom?")]
         public HashSet<RoomType> RandomRooms { get; set; } = new HashSet<RoomType>
         {
             RoomType.EzCafeteria,
