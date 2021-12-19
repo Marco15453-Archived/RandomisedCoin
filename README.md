@@ -1,3 +1,4 @@
+# **THIS PLUGIN HAS BEEN ARCHIVED**
 # Randomised Coin
 A simple Exiled Plugin that gives some effects upon Landing on a side
 
